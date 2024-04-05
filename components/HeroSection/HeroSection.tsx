@@ -24,7 +24,7 @@ const HeroSection = () => {
               speed={45}
             />
           </h1>
-          <p className="text-[#ADB7Be] text-base sm:text-lg mb-6 lg:text-xl">
+          <p className="text-[#ADB7Be] text-base sm:w-full sm:max-w-64 sm:text-lg mb-6 md:max-w-none lg:text-xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quam
             obcaecati mollitia aperiam perspiciatis totam eos ea error facilis
             consequatur ratione sit ipsum quasi vitae repudiandae recusandae
