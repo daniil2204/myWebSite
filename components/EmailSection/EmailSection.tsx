@@ -1,10 +1,27 @@
-import React from "react";
+"use client";
+import React, { MutableRefObject, useRef } from "react";
 import GitHubIcon from "../../public/images/github-icon.svg";
 import LinkedinIcon from "../../public/images/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
+import emailjs from "@emailjs/browser";
 
 const EmailSection = () => {
+  const formRef = useRef() as MutableRefObject<HTMLFormElement>;
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_tqq46na",
+        "template_4li059v",
+        formRef.current,
+        process.env.EMAILJS_API_KEY
+      )
+      .then(
+        (result) => {},
+        (error) => {}
+      );
+  };
   return (
     <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative">
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
@@ -40,21 +57,23 @@ const EmailSection = () => {
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg w-full p-2.5"
               placeholder="test@gmail.com"
+              name="Email"
             />
           </div>
           <div className="mb-6">
             <label
               className="text-white mb-2 block text-sm font-medium"
-              htmlFor="subject"
+              htmlFor="fullName"
             >
-              Subject
+              Full Name
             </label>
             <input
               type="text"
-              id="subject"
+              id="fullName"
               required
+              name="FullName"
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg w-full p-2.5"
-              placeholder="Subject"
+              placeholder="Full Name"
             />
           </div>
           <div className="mb-6">
