@@ -27,7 +27,7 @@ const projects: IProjectCard[] = [
     id: 3,
     desc: "superTest",
     imgUrl: "/images/1.png",
-    tag: ["All", "Web"],
+    tag: ["All"],
     title: "test3",
     gitUrl: "http",
     previewUrl: "http",
@@ -53,7 +53,9 @@ const Projects = () => {
       </div>
       <div>
         {projects
-          .filter((item) => item.tag.includes(selectedBtn))
+          .filter((item) =>
+            selectedBtn === "All" ? item : item.tag.includes(selectedBtn)
+          )
           .map((project) => (
             <ProjectCard
               key={project.id}

@@ -1,26 +1,38 @@
 "use client";
-import React, { MutableRefObject, useRef } from "react";
+import React, { MutableRefObject, useRef, useState } from "react";
 import GitHubIcon from "../../public/images/github-icon.svg";
 import LinkedinIcon from "../../public/images/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
+import { PropagateLoader } from "react-spinners";
 
 const EmailSection = () => {
+  const [loading, setLoading] = useState(false);
   const formRef = useRef() as MutableRefObject<HTMLFormElement>;
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
     emailjs
       .sendForm(
         "service_tqq46na",
         "template_4li059v",
         formRef.current,
-        process.env.EMAILJS_API_KEY
+        "1ry3WQyHrIeAxXWfF"
       )
       .then(
-        (result) => {},
-        (error) => {}
-      );
+        (result) => {
+          toast(`Message was sended!`);
+        },
+        (error) => {
+          toast.error(`
+          Sorry, there was an error(`);
+        }
+      )
+      .finally(() => {
+        setLoading(false);
+      });
   };
   return (
     <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative">
@@ -43,7 +55,11 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-        <form className="flex flex-col gap-4">
+        <form
+          className="flex flex-col gap-4"
+          onSubmit={sendEmail}
+          ref={formRef}
+        >
           <div className="mb-6">
             <label
               className="text-white mb-2 block text-sm font-medium"
@@ -57,7 +73,7 @@ const EmailSection = () => {
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg w-full p-2.5"
               placeholder="test@gmail.com"
-              name="Email"
+              name="email"
             />
           </div>
           <div className="mb-6">
@@ -71,7 +87,7 @@ const EmailSection = () => {
               type="text"
               id="fullName"
               required
-              name="FullName"
+              name="fullName"
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg w-full p-2.5"
               placeholder="Full Name"
             />
@@ -92,9 +108,14 @@ const EmailSection = () => {
           </div>
           <button
             type="submit"
-            className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 rounded-lg w-full"
+            className="bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-lg w-full h-12 flex items-center justify-center"
+            disabled={loading}
           >
-            Send
+            {loading ? (
+              <PropagateLoader className="mb-3" color="#fff" />
+            ) : (
+              "Send"
+            )}
           </button>
         </form>
       </div>
