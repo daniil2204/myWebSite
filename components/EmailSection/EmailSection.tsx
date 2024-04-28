@@ -108,7 +108,7 @@ const EmailSection = () => {
           </div>
           <button
             type="submit"
-            className="bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-lg w-full h-12 flex items-center justify-center"
+            className="bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-lg w-full h-12 flex items-center justify-center"
             disabled={loading}
           >
             {loading ? (

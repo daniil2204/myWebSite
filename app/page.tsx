@@ -5,6 +5,8 @@ import Projects from "@/components/Projects/Projects";
 import EmailSection from "@/components/EmailSection/EmailSection";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "@/components/Footer/Footer";
+import Achievements from "@/components/Achievements/Achievements";
 
 export default function Home() {
   return (
@@ -13,10 +15,12 @@ export default function Home() {
         <Navbar />
         <div className="container mx-auto mt-24 px-12 py-4">
           <HeroSection />
+          {/* <Achievements /> */}
           <About />
           <Projects />
           <EmailSection />
         </div>
+        <Footer />
       </main>
       <ToastContainer
         position="bottom-right"
