@@ -10,7 +10,7 @@ import MenuOverlay from "../elements/Navbar/MenuOverlay";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] opacity-100">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] opacity-100 z-20">
       <div className="flex flex-wrap items-center justify-between mx-auto px-8 py-2">
         <Link
           href={"/"}
@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinkLists.map((link) => (
-              <NavLink key={link.title} title={link.title} href={link.href} />
+              <NavLink key={link.title} title={link.title} to={link.to} />
             ))}
           </ul>
         </div>

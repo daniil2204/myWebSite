@@ -46,7 +46,7 @@ const Projects = () => {
   };
 
   return (
-    <section ref={projectsRef}>
+    <section ref={projectsRef} id="projects">
       <h1>My Projects</h1>
       <div className=" text-white flex justify-center items-center sm:gap-2 py-6">
         <ProjectTag

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useTransition } from "react";
 import TabBtn from "../elements/About/TabBtn";
 import { tabs } from "@/additionalLists/AboutTabsContent";
+import { motion } from "framer-motion";
 
 const About = () => {
   const [tab, setTab] = useState("skills");
@@ -15,7 +16,13 @@ const About = () => {
     });
   };
   return (
-    <section className="text-white">
+    <motion.section
+      className="text-white"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      id="about"
+    >
       <div className="hidden sm:grid md:grid-cols-2 gap-8 items-start py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
           alt="AboutPage"
@@ -56,7 +63,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

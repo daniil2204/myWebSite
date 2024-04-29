@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -37,13 +38,25 @@ const HeroSection = () => {
             corporis, veritatis suscipit.
           </p>
           <div>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white">
+            <Link
+              href="/"
+              to={"contact"}
+              spy={true}
+              smooth={true}
+              offset={-40}
+              duration={500}
+              className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
+            >
               Contact me
-            </button>
+            </Link>
             <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3">
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+              <a
+                href="/images/heroImage.png"
+                download
+                className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2"
+              >
                 Download CV
-              </span>
+              </a>
             </button>
           </div>
         </motion.div>
