@@ -24,7 +24,7 @@ export const projects: IProjectCard[] = [
     tag: ["All", "FrontEnd"],
     title: "Personal Web",
     gitUrl: "https://github.com/daniil2204/myWebSite",
-    previewUrl: "http",
+    previewUrl: "https://my-web-site-phi.vercel.app/",
   },
   {
     id: 4,
@@ -48,6 +48,6 @@ export const projects: IProjectCard[] = [
     tag: ["All", "BackEnd"],
     title: "GraphQL Back",
     gitUrl: "https://github.com/daniil2204/graphQLBack",
-    previewUrl: "http",
+    previewUrl: "",
   },
 ];
