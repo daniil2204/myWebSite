@@ -1,44 +1,14 @@
 "use client";
 import React, { useState, useRef } from "react";
 import ProjectCard from "../elements/Projects/ProjectCard";
-import { IProjectCard } from "@/types/Projects";
+import { projects } from "@/additionalLists/ProjectList";
 import ProjectTag from "../elements/Projects/ProjectTag";
 import { motion, useInView } from "framer-motion";
-
-const projects: IProjectCard[] = [
-  {
-    id: 1,
-    desc: "superTest",
-    imgUrl: "/images/1.png",
-    tag: ["Web"],
-    title: "test1",
-    gitUrl: "http",
-    previewUrl: "http",
-  },
-  {
-    id: 2,
-    desc: "superTest",
-    imgUrl: "/images/1.png",
-    tag: ["All", "Web"],
-    title: "test2",
-    gitUrl: "http",
-    previewUrl: "http",
-  },
-  {
-    id: 3,
-    desc: "superTest",
-    imgUrl: "/images/1.png",
-    tag: ["All"],
-    title: "test3",
-    gitUrl: "http",
-    previewUrl: "http",
-  },
-];
 
 const Projects = () => {
   const projectsRef = useRef(null);
   const isInView = useInView(projectsRef, { once: true });
-  const [selectedBtn, setSelectedBtn] = useState("All");
+  const [selectedBtn, setSelectedBtn] = useState("FrontEnd");
 
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
@@ -47,17 +17,23 @@ const Projects = () => {
 
   return (
     <section ref={projectsRef} id="projects">
-      <h1>My Projects</h1>
+      <h1 className="text-center text-xl md:text-2xl xl:text-4xl">
+        Мої проєкти
+      </h1>
+      <h2 className="text-center text-xs md:text-xl">
+        Через те, що використовую безплатний вебхостинг, треба зачекати поки
+        сервер буде увімкнуто
+      </h2>
       <div className=" text-white flex justify-center items-center sm:gap-2 py-6">
         <ProjectTag
-          text="All"
-          isSelected={selectedBtn === "All"}
-          onClickBtn={() => setSelectedBtn("All")}
+          text="FrontEnd"
+          isSelected={selectedBtn === "FrontEnd"}
+          onClickBtn={() => setSelectedBtn("FrontEnd")}
         />
         <ProjectTag
-          text="Web"
-          isSelected={selectedBtn === "Web"}
-          onClickBtn={() => setSelectedBtn("Web")}
+          text="BackEnd"
+          isSelected={selectedBtn === "BackEnd"}
+          onClickBtn={() => setSelectedBtn("BackEnd")}
         />
       </div>
       <ul className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12">
@@ -74,7 +50,6 @@ const Projects = () => {
               transition={{ duration: 0.3, delay: index * 0.4 }}
             >
               <ProjectCard
-                desc={project.desc}
                 imgUrl={project.imgUrl}
                 title={project.title}
                 gitUrl={project.gitUrl}

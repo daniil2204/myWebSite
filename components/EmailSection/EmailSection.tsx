@@ -53,10 +53,7 @@ const EmailSection = () => {
       >
         <h5 className="text-xl font-bold text-white my-2">Connect via Email</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsum,
-          magnam odit delectus perferendis tempore minima dolorem. Eaque omnis,
-          eum iure beatae suscipit esse ad excepturi, nostrum voluptatibus
-          magnam tenetur!
+          Відправте повідомлення на пошту або {`зв'яжіться`} через інші мережі
         </p>
         <div className="socials flex gap-2">
           <Link href={"/"}>
@@ -85,7 +82,7 @@ const EmailSection = () => {
               className="text-white mb-2 block text-sm font-medium"
               htmlFor="email"
             >
-              Your Email
+              Ваша пошта
             </label>
             <input
               type="email"
@@ -101,7 +98,7 @@ const EmailSection = () => {
               className="text-white mb-2 block text-sm font-medium"
               htmlFor="fullName"
             >
-              Full Name
+              {`Ваше Ім'я`}
             </label>
             <input
               type="text"
@@ -117,7 +114,7 @@ const EmailSection = () => {
               htmlFor="message"
               className="text-white block text-sm mb-2 font-medium"
             >
-              Message
+              Повідомлення
             </label>
             <textarea
               name="message"
@@ -134,7 +131,7 @@ const EmailSection = () => {
             {loading ? (
               <PropagateLoader className="mb-3" color="#fff" />
             ) : (
-              "Send"
+              "Відправити"
             )}
           </button>
         </form>

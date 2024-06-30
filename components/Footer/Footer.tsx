@@ -7,8 +7,8 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="footer border border-[#33353F] border-transparent text-white flex justify-center">
-      <div className="container p-12 flex justify-around">
+    <footer className="footer fixed bottom-0 w-full z-30 h-20 bg-[#121212] text-white ">
+      <div className="container pt-6 px-12 flex justify-around">
         <Link href={"/"} className="w-12 h-12 relative">
           <Image fill src={GitHubIcon} alt="GitHub" />
         </Link>

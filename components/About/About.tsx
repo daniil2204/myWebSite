@@ -23,7 +23,7 @@ const About = () => {
       transition={{ duration: 0.5 }}
       id="about"
     >
-      <div className="hidden sm:grid md:grid-cols-2 gap-8 items-start py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div className="sm:grid md:grid-cols-2 gap-8 items-start py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
           alt="AboutPage"
           src={"/images/about-image.png"}
@@ -33,29 +33,32 @@ const About = () => {
         <div>
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat
-            doloribus voluptate est, corporis, aspernatur aliquam laboriosam
-            pariatur nisi obcaecati eum, assumenda quidem molestias illo
-            blanditiis asperiores fuga modi amet at.
+            Маю досвід розробки, як Front-End, так і Back-End частини
+            веб-застосунків. Займаюся, як версткою макетів, так і створенням або
+            впровадження бізнес-логіки для цих сайтів, з використанням best
+            practices в написанні кода, а також оптимізації сайту для
+            користувача. Маю чітке розуміння того, як працюють
+            інформаційно-телекомунікаційні системи, а також роботу протоколів
+            прикладного та транспортного рівнів.
           </p>
           <div className="flex flex-row mt-8">
             <TabBtn
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              Skills
+              Стек технологій
             </TabBtn>
             <TabBtn
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              Education
+              Освіта
             </TabBtn>
             <TabBtn
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
-              Certifications
+              Сертифікати
             </TabBtn>
           </div>
           <div className="mt-8">
