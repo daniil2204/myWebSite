@@ -2,7 +2,7 @@ import { ITabContent } from "@/types/About";
 
 export const tabs: ITabContent[] = [
   {
-    title: "Стек технологій",
+    title: "Skills",
     id: "skills",
     htmlContent: (
       <ol className="list-disc pl-2">
@@ -11,6 +11,7 @@ export const tabs: ITabContent[] = [
           "- HTML5",
           "- CSS(SASS,SCSS)",
           "- Tailwind",
+          "- Webpack",
           "- React, Next",
           "- Redux(Redux ToolKit)",
           "- React-Hook-Form, Formik",
@@ -26,23 +27,23 @@ export const tabs: ITabContent[] = [
     ),
   },
   {
-    title: "Освіта",
+    title: "Education",
     id: "education",
     htmlContent: (
       <ul className="list-disc pl-2">
         <li>
-          Національний університет “Одеська політехніка”, Одеса, Україна.
-          Спецільність - Кібербезпека та захист інформації.
+          National University Odessa Polytechnic, Odessa, Ukraine. Features -
+          Cybersecurity and retained information
         </li>
       </ul>
     ),
   },
   {
-    title: "Сертифікати",
+    title: "Certifications",
     id: "certifications",
     htmlContent: (
       <ul className="list-disc pl-2">
-        <li>- Повний курс JavaScript + React</li>
+        <li>- Advanced JavaScript + React course</li>
         <li>- The Nest JS Bootcamp</li>
         <li>- Excel Skills for Business: Essentials</li>
         <li>- Foundations of Cybersecurity</li>

@@ -33,32 +33,30 @@ const About = () => {
         <div>
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            Маю досвід розробки, як Front-End, так і Back-End частини
-            веб-застосунків. Займаюся, як версткою макетів, так і створенням або
-            впровадження бізнес-логіки для цих сайтів, з використанням best
-            practices в написанні кода, а також оптимізації сайту для
-            користувача. Маю чітке розуміння того, як працюють
-            інформаційно-телекомунікаційні системи, а також роботу протоколів
-            прикладного та транспортного рівнів.
+            I have experience in the development of both Front-End and Back-End
+            parts of web applications. I am engaged in both the creation of
+            layouts implementation of business logic for these sites, using best
+            practices in writing code, as well as optimizing the site for the
+            user.
           </p>
           <div className="flex flex-row mt-8">
             <TabBtn
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              Стек технологій
+              Skills
             </TabBtn>
             <TabBtn
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              Освіта
+              Education
             </TabBtn>
             <TabBtn
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
-              Сертифікати
+              Certifications
             </TabBtn>
           </div>
           <div className="mt-8">

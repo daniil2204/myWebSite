@@ -18,11 +18,11 @@ const Projects = () => {
   return (
     <section ref={projectsRef} id="projects">
       <h1 className="text-center text-xl md:text-2xl xl:text-4xl">
-        Мої проєкти
+        My Projects
       </h1>
       <h2 className="text-center text-xs md:text-xl">
-        Через те, що використовую безплатний вебхостинг, треба зачекати поки
-        сервер буде увімкнуто
+        Due to the fact that I use free web hosting, need to wait for a while
+        the backend server will be enabled
       </h2>
       <div className=" text-white flex justify-center items-center sm:gap-2 py-6">
         <ProjectTag
